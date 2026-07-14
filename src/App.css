@@ -1,0 +1,550 @@
+﻿:root {
+  --bg: #f9fafb;
+  --panel: #ffffff;
+  --text: #101828;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --accent: #1d4ed8;
+  --accent-soft: #dbeafe;
+  --danger: #ef4444;
+  --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  font-weight: 600;
+}
+
+.app-shell {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 24px 28px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.brand p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid transparent;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin: 24px 0 0;
+  padding: 18px 22px;
+  border-radius: 20px;
+  background: #eef2ff;
+  color: #1e293b;
+}
+
+.main-shell {
+  margin-top: 24px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.panel-header p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.dashboard {
+  display: grid;
+  gap: 24px;
+}
+
+.dashboard-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+}
+
+.calendar-panel,
+.detail-panel,
+.reminder-panel {
+  min-height: 260px;
+}
+
+.appointment-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.appointment-card {
+  width: 100%;
+  text-align: left;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 18px;
+  display: grid;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.appointment-card:hover,
+.receipt-page .appointment-card.selected {
+  border-color: var(--accent-soft);
+  background: #eef2ff;
+}
+
+.appointment-time {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.appointment-detail p {
+  margin: 12px 0;
+}
+
+.reminder-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 18px;
+  margin-bottom: 12px;
+}
+
+.empty-state {
+  padding: 32px;
+  background: #f8fafc;
+  border-radius: 20px;
+  color: var(--muted);
+}
+
+.patients-page {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+}
+
+.patients-sidebar,
+.patients-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.search-input,
+.record-form input,
+.record-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #f8fafc;
+  color: var(--text);
+}
+
+.record-form label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+
+.record-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.patient-list,
+.appointment-list {
+  display: grid;
+  gap: 12px;
+}
+
+.patient-list-item,
+.appointment-list-item {
+  width: 100%;
+  text-align: left;
+  padding: 18px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.patient-list-item.active,
+.patient-list-item:hover,
+.appointment-list-item:hover {
+  border-color: var(--accent-soft);
+}
+
+.tooth-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.tooth-button {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.tooth-button.selected {
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
+}
+
+.receipt-page .dashboard-row {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.receipt-form {
+  display: grid;
+  gap: 24px;
+}
+
+.receipt-header,
+.receipt-grid,
+.receipt-chart {
+  display: grid;
+  gap: 18px;
+}
+
+.receipt-header {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.receipt-row-inline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.receipt-grid {
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.receipt-section,
+.receipt-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.receipt-section h3,
+.receipt-card-header h4 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+.receipt-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.receipt-two-column label,
+.receipt-checkboxes,
+.receipt-block label,
+.receipt-block textarea {
+  display: block;
+}
+
+.receipt-two-column label {
+  display: grid;
+  gap: 8px;
+}
+
+.receipt-two-column input,
+.receipt-block input,
+.receipt-block textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--text);
+}
+
+.receipt-checkboxes {
+  display: grid;
+  gap: 10px;
+}
+
+.receipt-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.receipt-chart {
+  grid-template-columns: 1fr 1fr;
+}
+
+.tooth-chart {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.tooth-chart.primary {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.receipt-card-header {
+  margin-bottom: 8px;
+}
+
+.receipt-card .tooth-button {
+  min-height: 60px;
+}
+
+.receipt-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.receipt-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.footer {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 20px 24px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 1024px) {
+  .dashboard-row,
+  .patients-page {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar,
+  .footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+  }
+}
+
+.settings-form {
+  max-width: 600px;
+}
+
+.settings-section {
+  background: var(--panel);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  display: grid;
+  gap: 16px;
+}
+
+.settings-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.settings-section label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.settings-section input[type='text'],
+.settings-section input[type='password'],
+.settings-section input[type='tel'] {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.settings-section input[type='text']:focus,
+.settings-section input[type='password']:focus,
+.settings-section input[type='tel']:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.settings-section input[type='text']:disabled,
+.settings-section input[type='password']:disabled,
+.settings-section input[type='tel']:disabled {
+  background: #f3f4f6;
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.settings-section input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.settings-section label:has(input[type='checkbox']) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.settings-section small {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: -4px;
+}
+
+.info-box {
+  background: #f0f9ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 16px;
+  line-height: 1.6;
+}
+
+.info-box strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+.info-box ol {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.info-box li {
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.info-box a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.info-box a:hover {
+  text-decoration: underline;
+}
+
+.success-message {
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  color: #166534;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+}
